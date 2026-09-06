@@ -5,19 +5,17 @@ class Pipe:
         def __init__(self):
             self.x = random.randint(10,CANVAS_WIDTH - 10)
             self.y = random.randint(10,HEIGHT - 10)
-            self.length = random.randint(10,150)
-            self.thickness = random.randint(1,6) 
+            self.radius = random.randint(1,8)
 
         def copy(self):
             new_pipe = Pipe()
             new_pipe.x = self.x
             new_pipe.y = self.y
-            new_pipe.thickness = self.thickness
-            new_pipe.length = self.length
+            new_pipe.radius = self.radius
             return new_pipe
         
         def mutate(self):
-             choice = random.choice(['x','y','thickness','length'])
+             choice = random.choice(['x','y','radius'])
              is_frog_jump = random.random() < 0.05
 
              if choice == 'x':
@@ -43,19 +41,13 @@ class Pipe:
                   self.y = max(floor,min(self.y,ceil))
 
 
-             elif choice == 'thickness':
-                value = random.randint(-1,1)
-                self.thickness += value
+             elif choice == 'radius':
+                value = random.randint(-2,8)
+                self.radius += value
                 floor = 1
                 ceil = 10
-                self.thickness = max(floor,min(self.thickness,ceil))
+                self.radius = max(floor,min(self.radius,ceil))
 
-             else:
-                value = random.randint(-12,12)
-                self.length += value
-                floor = 10
-                ceil = 200
-                self.length = max(floor,min(self.length,ceil))
              return False
 
 

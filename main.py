@@ -65,7 +65,9 @@ while running:
             maximum_possible_loss = CANVAS_WIDTH * HEIGHT * 705
 
             accuracy = 100 - ((current_loss / maximum_possible_loss)) * 100
-
+            if accuracy > 99.99:
+                running = False
+                break
             mutated_surf = render_pipe(mutated_list)
             mutated_loss = calculate_loss(drawing_surface,mutated_surf)
 

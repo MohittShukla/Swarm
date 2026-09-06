@@ -8,15 +8,11 @@ def render_pipe(pipe_list):
    
 
     for pipe in pipe_list:
-        start_point = (pipe.x,pipe.y)
-        end_point = (pipe.x,pipe.y + pipe.length)
-        width = pipe.thickness
-        pygame.draw.line(
+        pygame.draw.circle(
             new_surface,
             COLOR_PIPE,
-            start_point,
-            end_point,
-            width
+            (pipe.x,pipe.y),
+            pipe.radius
         )
 
     return new_surface

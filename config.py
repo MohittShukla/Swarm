@@ -13,4 +13,4 @@ COLOR_PIPE = (0, 255, 150)    # Neon green pipes
 COLOR_GRID = (40, 40, 40)    # Center divider line
 
 # Evolution Settings
-NUM_PIPES = 1500               # Number of vertical pipes on screen
+NUM_PIPES = 150              # Number of vertical pipes on screen
