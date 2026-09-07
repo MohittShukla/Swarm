@@ -1,4 +1,4 @@
-# Copy Cat 🐸🎨
+Swarm 
 
 An evolutionary/hill-climbing AI built with Pygame that attempts to perfectly recreate whatever you draw on a canvas by evolving a swarm of circles. 
 
